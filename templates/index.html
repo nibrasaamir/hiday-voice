@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KN30IX GUIDE</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kTcE1m3BqQPhmXU3fV1V5p0DVbcFEY8VGt1FLfNd+7wL4eZmk0Q0qTmVbg5bLrjYpROTVx/EBMQYQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Reset default margins and paddings */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body, html {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+            background-size: 600% 600%;
+            animation: gradientBG 20s ease infinite;
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Animated Gradient Background */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Container Styling */
+        .container {
+            text-align: center;
+            padding: 40px 50px;
+            backdrop-filter: blur(20px);
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+        }
+
+        /* Title Styling */
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: #00FFFF; /* Aqua Cyan */
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            font-weight: 400;
+            color: #B0E0E6; /* Powder Blue */
+            text-shadow: 0 0 5px rgba(176, 224, 230, 0.5);
+            letter-spacing: 1px;
+        }
+
+        p.description {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #ADD8E6; /* Light Blue */
+            text-shadow: 0 0 5px rgba(173, 216, 230, 0.5);
+        }
+
+        p.impact {
+            font-size: 1.1rem;
+            color: #00FFFF; /* Aqua Cyan */
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.7);
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        /* Central Round Button Styling */
+        .shazam-button {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(0, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(0, 255, 255, 0.5);
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .shazam-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.9), 0 0 60px rgba(0, 255, 255, 0.7);
+            background: rgba(0, 255, 255, 0.15);
+        }
+
+        .shazam-button:active {
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        /* Icon and Text inside the button */
+        .shazam-button .button-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        .shazam-button .button-content i {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .shazam-button:hover .button-content i {
+            color: #00FFFF; /* Aqua Cyan */
+        }
+
+        .shazam-button .button-content span {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #B0E0E6; /* Powder Blue */
+            text-shadow: 0 0 5px rgba(176, 224, 230, 0.7);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Pulsating Animation */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 25px rgba(0, 255, 255, 0.9), 0 0 50px rgba(0, 255, 255, 0.7);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(0, 255, 255, 0.5);
+            }
+        }
+
+        .shazam-button.active {
+            animation: pulse 2s infinite;
+        }
+
+        /* Ripple Effect */
+        .shazam-button .ripple {
+            position: absolute;
+            border-radius: 50%;
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            background: rgba(0, 255, 255, 0.7);
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Status Message Styling */
+        #status-message {
+            margin-top: 30px;
+            font-size: 1rem;
+            min-height: 24px;
+            color: #ADD8E6; /* Light Blue */
+            text-shadow: 0 0 5px rgba(173, 216, 230, 0.7);
+        }
+
+        /* Footer Styling */
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #00FFFF; /* Aqua Cyan */
+        }
+
+        /* Audio Visualizer Styling */
+        .visualizer {
+            margin-top: 20px;
+            width: 120px;
+            height: 60px;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .visualizer div {
+            width: 8px;
+            height: 20px;
+            margin: 0 4px;
+            background: #00FFFF; /* Aqua Cyan */
+            border-radius: 4px;
+            animation: bounce 1s infinite alternate;
+        }
+
+        .visualizer div:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .visualizer div:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes bounce {
+            from { height: 20px; }
+            to { height: 40px; }
+        }
+
+        .visualizer.active {
+            display: flex;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 30px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            p.description, p.impact {
+                font-size: 0.95rem;
+            }
+
+            .shazam-button {
+                width: 120px;
+                height: 120px;
+            }
+
+            .shazam-button .button-content i {
+                font-size: 2rem;
+            }
+
+            .shazam-button .button-content span {
+                font-size: 1rem;
+            }
+
+            .visualizer {
+                width: 90px;
+                height: 45px;
+            }
+
+            .visualizer div {
+                width: 6px;
+                height: 18px;
+                margin: 0 3px;
+            }
+        }
+    </style>
+    <script>
+        // Function to send POST requests to the Flask endpoints
+        async function sendRequest(endpoint) {
+            const statusMessage = document.getElementById('status-message');
+            try {
+                const response = await fetch(endpoint, {method: 'POST'});
+                const data = await response.json();
+                statusMessage.textContent = data.status || data.response;
+            } catch (error) {
+                statusMessage.textContent = "درخواست بھیجنے میں خرابی ہوئی۔";
+                console.error(error);
+            }
+        }
+
+        // Function to handle button click with ripple effect
+        function handleButtonClick(event) {
+            const button = document.querySelector('.shazam-button');
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+            ripple.style.width = ripple.style.height = `${diameter}px`;
+            ripple.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+            ripple.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+            button.appendChild(ripple);
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+
+            // Toggle active class for animation
+            button.classList.toggle('active');
+
+            // Toggle visualizer
+            const visualizer = document.querySelector('.visualizer');
+            visualizer.classList.toggle('active');
+
+            // Send request to start or stop assistant based on active state
+            if (button.classList.contains('active')) {
+                sendRequest('/start_assistant');
+            } else {
+                sendRequest('/stop_assistant');
+            }
+        }
+
+        // Function to handle Start Conversation
+        async function startConversation() {
+            const statusMessage = document.getElementById('status-message');
+            const visualizer = document.querySelector('.visualizer');
+            visualizer.classList.add('active');
+            statusMessage.textContent = "سنوائی شروع ہو رہی ہے...";
+            try {
+                const response = await fetch('/start_conversation', {method: 'POST'});
+                const data = await response.json();
+                statusMessage.textContent = data.response || "بات چیت مکمل ہو گئی۔";
+            } catch (error) {
+                statusMessage.textContent = "درخواست بھیجنے میں خرابی ہوئی۔";
+                console.error(error);
+            } finally {
+                visualizer.classList.remove('active');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>KN30IX GUIDE</h1>
+        <h2>Genuine Understanding of Islamic Doctrine and Ethics</h2>
+        <p class="description">HIDAY - Your Personal Assistant for Upholding Islamic Ethics.</p>
+        <p class="impact">IMPACT BEYOND HUMAN CAPABILITY</p>
+        
+        <!-- Central Round Button -->
+        <button class="shazam-button" onclick="handleButtonClick(event)" aria-label="Activate Assistant">
+            <div class="button-content">
+                <i class="fas fa-microphone"></i>
+                <span>HIDAY</span>
+            </div>
+        </button>
+
+        <!-- Audio Visualizer -->
+        <div class="visualizer">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <!-- Status Message -->
+        <p id="status-message"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 KN30IX Guide. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
